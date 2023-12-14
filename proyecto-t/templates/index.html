@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='estilo.css') }}">
+    <title>Traductor</title>
+</head>
+<body>  
+    
+    <h1>Traductor de Español a Ingles</h1>
+    
+    <!-- Estilo para la imagen -->
+
+    <form id="translation-form">
+        <label for="input_text" class="label1">Ingresa una oración o palabra en español:</label>
+        <img src="{{ url_for('static', filename='image/bandera de espa.jpeg') }}" alt="Bandera de España" class="espa">
+        
+        <input type="text" id="input_text" name="input_text" required>
+        <button type="button" id="translateButton" class="translate-button">Traducir</button>
+        <button type="button" id="clearButton" class="clear-button">Limpiar</button>
+    </form>
+    <div>
+        <label for="translation-text">Traducción A:</label>
+       
+        <img src="{{ url_for('static', filename='image/USA.png') }}" alt="Bandera de Estados Unidos" class="flag">
+
+        <textarea id="translation-text" rows="4" cols="50" readonly></textarea>
+    </div>
+
+    <script>
+        // Definir la función translate
+        function translate() {
+            var inputText = document.getElementById('input_text').value;
+
+            fetch('/translate', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'input_text=' + encodeURIComponent(inputText),
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('translation-text').value = 'Traducción: ' + data.translation;
+            });
+        }
+
+        // Función para limpiar campos
+        function clearFields() {
+            document.getElementById('input_text').value = '';
+            document.getElementById('translation-text').value = '';
+        }
+
+        // Asignar el evento onclick después de cargar el DOM
+        document.getElementById('translateButton').onclick = translate;
+        document.getElementById('clearButton').onclick = clearFields;
+    </script>
+</body>
+<label for="input_text">COPYRIGHT 13/12/2023</label>
+<label for="input_text">CARLOS RIVAS | CARLOS PEREZ | ALLISON FABIOLA</label>
+</html>

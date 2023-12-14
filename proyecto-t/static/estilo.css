@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: url('../static/image/fondo2.jpg');
+    background-size: cover;
+}
+
+h1 {
+    color: #ffffff;
+}
+
+#translation-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-family: monospace;
+    color: #f1f1f1;
+}
+
+.label1 {
+    display: block;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    font-family: monospace;
+    color: #0e0e0e;
+}
+
+#input_text {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    padding-top: 5px;
+}
+
+
+.translate-button {
+    background-color: #1ddf23; /* Verde */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+.clear-button {
+    background-color: #cb1a0e; /* Rojo */
+    color: #fff; /* Texto blanco */
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+}
+
+#translation-text {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    border-radius: 20px;
+}
+.flag {
+    width: 80px; /* Tamaño deseado */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    margin-right: 50%; /* Espacio a la derecha del ícono */
+    margin-left: 42%;
+
+}
+.espa{
+    width: 80px; /* Tamaño deseado */
+    height: auto; /* La altura se ajusta automáticamente para mantener la proporción */
+    margin-right: 50%; /* Espacio a la derecha del ícono */
+    margin-left: 40%;
+}
+
+.translate-button:hover{
+    background-color: #0aff12;
+}
+
+.clear-button:hover{
+    background-color:#ff0011;
+}
